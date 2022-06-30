@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.time.LocalDate;
+
 @Controller
 public class MainController {
     private PersonRepository personRepository;
@@ -24,7 +26,7 @@ public class MainController {
 
     @GetMapping("/create")
     public String myViewDisplay(Model model) {
-        model.addAttribute("person", new Person("", "", ""));
+        model.addAttribute("person", new Person("", "", "", LocalDate.of(2022, 2, 2), 1, ""));
 
         return "create";
     }
