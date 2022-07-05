@@ -4,11 +4,15 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
+@Table(name = "Personenverwaltung")
 public class Person {
+    @Column(name = "first_name")
     private String firstname;
+    @Column(name = "last_name")
     private String lastname;
     @Temporal(TemporalType.DATE)
     private LocalDate birthdate;
+    @Column(name = "email")
     private String email;
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
