@@ -26,7 +26,7 @@ public class MainController {
 
     @GetMapping("/create")
     public String myViewDisplay(Model model) {
-        model.addAttribute("person", new Person("", "", "", LocalDate.of(2022, 2, 2), 1, ""));
+        model.addAttribute("person", new Person("Aaron", "Holenstein", LocalDate.of(2002, 7, 12), "aaron.holenstein@icloud.com", "m"));
 
         return "create";
     }

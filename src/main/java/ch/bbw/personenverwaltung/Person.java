@@ -17,12 +17,11 @@ public class Person {
     private String gender;
 
 
-    public Person(String firstname, String lastname, LocalDate birthdate, String email, Long id, String gender) {
+    public Person(String firstname, String lastname, LocalDate birthdate, String email, String gender) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.birthdate = birthdate;
         this.email = email;
-        this.id = id;
         this.gender = gender;
     }
 

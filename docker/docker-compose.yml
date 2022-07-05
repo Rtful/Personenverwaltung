@@ -13,7 +13,7 @@ services:
 
   phpmyadmin:
     depends_on:
-      - mariadb
+      - mysqldb
     image: phpmyadmin/phpmyadmin
     ports:
       - 8090:80
