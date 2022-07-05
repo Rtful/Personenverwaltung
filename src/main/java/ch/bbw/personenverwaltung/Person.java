@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "Personenverwaltung")
+@Table(name = "Person")
 public class Person {
     @Column(name = "first_name")
     private String firstname;

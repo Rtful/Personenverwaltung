@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Person</title>
+</head>
+<body>
+<input class="form-control"
+       type="text"
+       th:value="${person.firstname}" id="personFirstname" name="personFirstname" />
+<input class="form-control"
+       type="text"
+       th:value="${person.lastname}" id="personLastname" name="personLastname" />
+<input class="form-control"
+       type="text"
+       th:value="${person.birthdate}" id="personBirthdate" name="personBirthdate" />
+<input class="form-control"
+       type="text"
+       th:value="${person.email}" id="personEmail" name="personEmail" />
+<input class="form-control"
+       type="text"
+       th:value="${person.gender}" id="personGender" name="personGender" />
+</body>
+</html>
