@@ -1,24 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Edit Person</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        /* Change the link color to #111 (black) on hover */
+        li a:hover {
+            background-color: #111;
+        }
+    </style>
 </head>
+
 <body>
-<input class="form-control"
-       type="text"
-       th:value="${person.firstname}" id="personFirstname" name="personFirstname" />
-<input class="form-control"
-       type="text"
-       th:value="${person.lastname}" id="personLastname" name="personLastname" />
-<input class="form-control"
-       type="text"
-       th:value="${person.birthdate}" id="personBirthdate" name="personBirthdate" />
-<input class="form-control"
-       type="text"
-       th:value="${person.email}" id="personEmail" name="personEmail" />
-<input class="form-control"
-       type="text"
-       th:value="${person.gender}" id="personGender" name="personGender" />
+<ul>
+    <li><a href="all">Overview</a></li>
+    <li><a href="create">Create</a></li>
+</ul>
+
+<form action="#" th:action="@{/create}" th:object="${person}" method="post">
+    <input type="hidden" th:field="*{id}"/>
+
+    <div class="form-group" style="margin-left: 10px; width: 250px;">
+        <label>Firstname </label>
+        <input class="form-control" type="text" th:value="*{firstname}" id="personFirstname"
+               name="personFirstname"/>
+    </div>
+
+    <div class="form-group" style="margin-left: 10px; width: 250px;">
+        <label>Lastname </label>
+        <input class="form-control" type="text" th:value="*{lastname}" id="personLastname"
+               name="personLastname"/>
+    </div>
+
+    <div class="form-group" style="margin-left: 10px; width: 250px;">
+        <label>E-Mail </label>
+        <input class="form-control" type="text" th:value="*{email}" id="personEmail"
+               name="personEmail"/>
+    </div>
+
+    <div class="form-group" style="margin-left: 10px; width: 250px;">
+        <label>Birthdate </label>
+        <input class="form-control" type="text" th:value="*{birthdate}" id="personBirthdate"
+               name="personBirthdate"/>
+    </div>
+
+    <div class="form-group" style="margin-left: 10px; width: 250px;">
+        <label>Gender </label>
+        <input class="form-control" type="text" th:value="*{gender}" id="personGender"
+               name="personGender"/>
+    </div>
+
+    <p><input type="submit" value="submit" style="margin-left: 10px;"></p>
+</form>
 </body>
 </html>

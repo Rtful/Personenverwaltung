@@ -6,18 +6,18 @@ import java.time.LocalDate;
 @Entity
 @Table(name = "Person")
 public class Person {
-    @Column(name = "first_name")
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
+    @Column(name = "firstname")
     private String firstname;
-    @Column(name = "last_name")
+    @Column(name = "lastname")
     private String lastname;
-    @Temporal(TemporalType.DATE)
+    @Column(name = "birthdate")
     private LocalDate birthdate;
     @Column(name = "email")
     private String email;
-    @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
-    private long id;
-
+    @Column(name = "gender")
     private String gender;
 
 
@@ -30,7 +30,7 @@ public class Person {
     }
 
     public Person() {
-
+        //
     }
 
     public String getFirstname() {
