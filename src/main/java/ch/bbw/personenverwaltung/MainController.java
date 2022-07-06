@@ -20,10 +20,12 @@ public class MainController {
     }
 
     // Index
-    @GetMapping("/index")
-    public String index() {
+    // Overview
+    @GetMapping({"/", "/all"})
+    public String getAll(Model model) {
+        model.addAttribute("persons", personRepository.findAll());
 
-        return "index";
+        return "/all";
     }
 
     // Create, Save
@@ -42,7 +44,18 @@ public class MainController {
     }
 
     /*
-    @PostMapping("/create") // Map ONLY POST Requests
+    @PostMapping("/create")
+    public String postCreate(@Valid Person person, BindingResult result, Model model) {
+        if (result.hasErrors()) {
+            return "create";
+        }
+        personRepository.save(person);
+        return "redirect:/all";
+    }
+    */
+
+    /*
+    @PostMapping("/add") // Map ONLY POST Requests
     public @ResponseBody
     String addNewUser(@RequestParam String firstname
             , @RequestParam String lastname, @RequestParam String email, @RequestParam String gender, @RequestParam LocalDate birthdate) {
@@ -69,14 +82,6 @@ public class MainController {
 
         this.personRepository.deleteById(id);
         return "redirect:/all";
-    }
-
-    // Overview
-    @GetMapping("/all")
-    public String getAll(Model model) {
-        model.addAttribute("persons", personRepository.findAll());
-
-        return "all";
     }
 
     /*

@@ -54,26 +54,31 @@
     <div class="form-group" style="margin-left: 10px; width: 250px;">
         <label for="firstname">Firstname </label>
         <input type="text" th:field="*{firstname}" class="form-control" id="firstname" name="firstname"/>
+        <div class="alert alert-warning" th:if="${#fields.hasErrors('firstname')}" th:errors="*{firstname}"></div>
     </div>
 
     <div class="form-group" style="margin-left: 10px; width: 250px;">
         <label for="lastname">Lastname </label>
         <input type="text" th:field="*{lastname}" class="form-control" id="lastname" name="lastname"/>
+        <div class="alert alert-warning" th:if="${#fields.hasErrors('lastname')}" th:errors="*{lastname}"></div>
     </div>
 
     <div class="form-group" style="margin-left: 10px; width: 250px;">
         <label for="email">E-Mail </label>
         <input type="text" th:field="*{email}" class="form-control" id="email" name="email"/>
+        <div class="alert alert-warning" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
     </div>
 
     <div class="form-group" style="margin-left: 10px; width: 250px;">
         <label for="gender">Gender </label>
         <input type="text" th:field="*{gender}" class="form-control" id="gender" name="gender"/>
+        <div class="alert alert-warning" th:if="${#fields.hasErrors('gender')}" th:errors="*{gender}"></div>
     </div>
 
     <div class="form-group" style="margin-left: 10px; width: 250px;">
         <label for="birthdate">Birthdate </label>
         <input type="date" th:field="*{birthdate}" class="form-control" id="birthdate" name="birthdate"/>
+        <div class="alert alert-warning" th:if="${#fields.hasErrors('birthdate')}" th:errors="*{birthdate}"></div>
     </div>
 
     <p><input type="submit" value="submit" style="margin-left: 10px;"></p>
