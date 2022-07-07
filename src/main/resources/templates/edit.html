@@ -40,60 +40,64 @@
         /* Change the link color to #111 (black) on hover */
         li a:hover {
             background-color: #111;
-        }
+            color: white;        }
     </style>
 </head>
 
 <body>
-<ul>
-    <li><a href="all">Overview</a></li>
-    <li><a href="create">Create</a></li>
-</ul>
+<div class="container container col-md-12 col-lg-9" style="margin-top: 50px">
+    <h3>Create Person</h3>
+    <ul>
+        <li><a href="/all">Overview</a></li>
+        <li><a href="/create">Create</a></li>
+    </ul>
 
-<form action="#" th:action="@{/create}" th:object="${person}" method="post">
-    <input type="hidden" th:field="*{id}"/>
+    <form action="#" th:action="@{/create}" th:object="${person}" method="post">
+        <input type="hidden" th:field="*{id}"/>
 
-    <div class="form-group" style="margin-left: 10px; width: 250px;">
-        <label>Firstname </label>
-        <input class="form-control" type="text" th:value="*{firstname}" id="firstname"
-               name="firstname"/>
-    </div>
-
-    <div class="form-group" style="margin-left: 10px; width: 250px;">
-        <label>Lastname </label>
-        <input class="form-control" type="text" th:value="*{lastname}" id="lastname"
-               name="lastname"/>
-    </div>
-
-    <div class="form-group" style="margin-left: 10px; width: 250px;">
-        <label>E-Mail </label>
-        <input class="form-control" type="text" th:value="*{email}" id="email"
-               name="email"/>
-    </div>
-
-    <div class="form-group" style="margin-left: 10px; width: 250px;">
-        <label>Birthdate </label>
-        <input type="date" th:field="*{birthdate}" class="form-control" id="birthdate" name="birthdate"/>
-        <div class="alert alert-warning" th:if="${#fields.hasErrors('birthdate')}" th:errors="*{birthdate}"></div>
-    </div>
-
-    <div class="form-group" style="margin-left: 10px; width: 250px;">
-        <label>Gender </label>
-        <div class="custom-control custom-radio custom-control-inline">
-            <input id="m" type="radio" name="gender" th:field="*{gender}" th:value="m" class="custom-control-input">
-            <label class="custom-control-label" th:for="m" th:text="m"></label>
+        <div class="form-group col-sm-12 col-lg-8">
+            <label>Firstname </label>
+            <input class="form-control" type="text" th:value="*{firstname}" id="firstname"
+                   name="firstname"/>
         </div>
-        <div class="custom-control custom-radio custom-control-inline">
-            <input id="f" type="radio" name="gender" th:field="*{gender}" th:value="f" class="custom-control-input">
-            <label class="custom-control-label" th:for="f" th:text="f"></label>
-        </div>
-        <div class="custom-control custom-radio custom-control-inline">
-            <input id="nb" type="radio" name="gender" th:field="*{gender}" th:value="nb" class="custom-control-input">
-            <label class="custom-control-label" th:for="nb" th:text="nb"></label>
-        </div>
-    </div>
 
-    <p><input type="submit" value="submit" style="margin-left: 10px;"></p>
-</form>
+        <div class="form-group col-sm-12 col-lg-8">
+            <label>Lastname </label>
+            <input class="form-control" type="text" th:value="*{lastname}" id="lastname"
+                   name="lastname"/>
+        </div>
+
+        <div class="form-group col-sm-12 col-lg-8">
+            <label>E-Mail </label>
+            <input class="form-control" type="text" th:value="*{email}" id="email"
+                   name="email"/>
+        </div>
+
+        <div class="form-group col-sm-12 col-lg-8">
+            <label>Birthdate </label>
+            <input type="date" th:field="*{birthdate}" class="form-control" id="birthdate" name="birthdate"/>
+            <div class="alert alert-warning" th:if="${#fields.hasErrors('birthdate')}" th:errors="*{birthdate}"></div>
+        </div>
+
+        <div class="form-group col-sm-12 col-lg-8">
+            <label>Gender </label>
+            <div class="custom-control custom-radio custom-control-inline">
+                <input id="m" type="radio" name="gender" th:field="*{gender}" th:value="m" class="custom-control-input">
+                <label class="custom-control-label" th:for="m" th:text="m"></label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+                <input id="f" type="radio" name="gender" th:field="*{gender}" th:value="f" class="custom-control-input">
+                <label class="custom-control-label" th:for="f" th:text="f"></label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+                <input id="nb" type="radio" name="gender" th:field="*{gender}" th:value="nb"
+                       class="custom-control-input">
+                <label class="custom-control-label" th:for="nb" th:text="nb"></label>
+            </div>
+        </div>
+
+        <p><input type="submit" value="submit" style="margin-left: 10px;"></p>
+    </form>
+</div>
 </body>
 </html>
