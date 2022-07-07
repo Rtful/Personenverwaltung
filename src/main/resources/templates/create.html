@@ -70,9 +70,19 @@
     </div>
 
     <div class="form-group" style="margin-left: 10px; width: 250px;">
-        <label for="gender">Gender </label>
-        <input type="text" th:field="*{gender}" class="form-control" id="gender" name="gender"/>
-        <div class="alert alert-warning" th:if="${#fields.hasErrors('gender')}" th:errors="*{gender}"></div>
+        <label>Gender </label>
+        <div class="custom-control custom-radio custom-control-inline">
+            <input id="m" type="radio" name="gender" th:field="*{gender}" th:value="m" class="custom-control-input">
+            <label class="custom-control-label" th:for="m" th:text="m"></label>
+        </div>
+        <div class="custom-control custom-radio custom-control-inline">
+            <input id="f" type="radio" name="gender" th:field="*{gender}" th:value="f" class="custom-control-input">
+            <label class="custom-control-label" th:for="f" th:text="f"></label>
+        </div>
+        <div class="custom-control custom-radio custom-control-inline">
+            <input id="nb" type="radio" name="gender" th:field="*{gender}" th:value="nb" class="custom-control-input">
+            <label class="custom-control-label" th:for="nb" th:text="nb"></label>
+        </div>
     </div>
 
     <div class="form-group" style="margin-left: 10px; width: 250px;">
