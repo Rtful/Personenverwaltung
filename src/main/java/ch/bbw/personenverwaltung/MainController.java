@@ -37,7 +37,7 @@ public class MainController {
     }
 
     @PostMapping("/create")
-    public String postCreate(@ModelAttribute Person person, Model model) {
+    public String postCreate(@ModelAttribute Person person) {
         personRepository.save(person);
 
         return "redirect:/all";

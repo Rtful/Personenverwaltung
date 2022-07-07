@@ -55,32 +55,32 @@
 
     <div class="form-group" style="margin-left: 10px; width: 250px;">
         <label>Firstname </label>
-        <input class="form-control" type="text" th:value="*{firstname}" id="personFirstname"
-               name="personFirstname"/>
+        <input class="form-control" type="text" th:value="*{firstname}" id="firstname"
+               name="firstname"/>
     </div>
 
     <div class="form-group" style="margin-left: 10px; width: 250px;">
         <label>Lastname </label>
-        <input class="form-control" type="text" th:value="*{lastname}" id="personLastname"
-               name="personLastname"/>
+        <input class="form-control" type="text" th:value="*{lastname}" id="lastname"
+               name="lastname"/>
     </div>
 
     <div class="form-group" style="margin-left: 10px; width: 250px;">
         <label>E-Mail </label>
-        <input class="form-control" type="text" th:value="*{email}" id="personEmail"
-               name="personEmail"/>
+        <input class="form-control" type="text" th:value="*{email}" id="email"
+               name="email"/>
     </div>
 
     <div class="form-group" style="margin-left: 10px; width: 250px;">
         <label>Birthdate </label>
-        <input class="form-control" type="text" th:value="*{birthdate}" id="personBirthdate"
-               name="personBirthdate"/>
+        <input type="date" th:field="*{birthdate}" class="form-control" id="birthdate" name="birthdate"/>
+        <div class="alert alert-warning" th:if="${#fields.hasErrors('birthdate')}" th:errors="*{birthdate}"></div>
     </div>
 
     <div class="form-group" style="margin-left: 10px; width: 250px;">
         <label>Gender </label>
-        <input class="form-control" type="text" th:value="*{gender}" id="personGender"
-               name="personGender"/>
+        <input class="form-control" type="text" th:value="*{gender}" id="gender"
+               name="gender"/>
     </div>
 
     <p><input type="submit" value="submit" style="margin-left: 10px;"></p>
