@@ -40,7 +40,7 @@ public class MainController {
     public String postCreate(@ModelAttribute Person person, Model model) {
         personRepository.save(person);
 
-        return "create";
+        return "redirect:/all";
     }
 
     /*

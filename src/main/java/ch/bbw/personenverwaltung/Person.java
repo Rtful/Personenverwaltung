@@ -17,33 +17,33 @@ public class Person {
     private long id;
 
     @Column(name = "firstname")
-    @NotNull
-    @NotEmpty
-    @Size(max = 20)
+    // @NotNull
+    // @NotEmpty
+    // @Size(max = 20)
     private String firstname;
 
     @Column(name = "lastname")
-    @NotNull
-    @NotEmpty
-    @Size(max = 20)
+    // @NotNull
+    // @NotEmpty
+    // @Size(max = 20)
     private String lastname;
 
     @Column(name = "birthdate")
-    @NotNull
+    // @NotNull
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    @NotEmpty
+    // @NotEmpty
     private LocalDate birthdate;
 
     @Column(name = "email")
-    @NotNull
-    @NotEmpty
-    @Email
+    // @NotNull
+    // @NotEmpty
+    // @Email
     private String email;
 
     @Column(name = "gender")
-    @NotNull
-    @NotEmpty
-    @Size(max = 20)
+    // @NotNull
+    // @NotEmpty
+    // @Size(max = 20)
     private String gender;
 
     public Person(String firstname, String lastname, LocalDate birthdate, String email, String gender) {
